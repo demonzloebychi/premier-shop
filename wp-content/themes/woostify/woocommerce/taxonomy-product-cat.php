@@ -11,7 +11,7 @@ get_header(); ?>
 
 	
 
-<main class="site-main">
+<main class="site-main sub-cat">
 
 
 <?php

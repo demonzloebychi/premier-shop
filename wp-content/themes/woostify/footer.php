@@ -1,13 +1,11 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * @package woostify
- */
 
-do_action( 'woostify_theme_footer' );
-wp_footer();
-?>
+<footer class='footer'>
+    <div class="woostify-container">
+        <p>Copyright 2024</p>
+
+    </div>
+</footer>
+
 
 </body>
 </html>

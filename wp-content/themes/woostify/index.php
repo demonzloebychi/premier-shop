@@ -7,37 +7,38 @@ get_header(); ?>
 
 
 
-<?php the_title(); ?>
+<h1><?php the_title(); ?></h1>
 
+
+
+
+
+<h2>Популярные категории</h2>
 
 <?php
-// Получаем категории продуктов
 $args = array(
     'taxonomy'   => 'product_cat',
     'hide_empty' => true,
-    'orderby'    => 'count', // Сортируем по количеству товаров
-    'order'      => 'DESC',   // В порядке убывания
+    'parent'     => 0, // Получаем только категории первого уровня
     'number'     => 6,        // Ограничиваем до 6 категорий
-    'parent'     => 0, 
+    'orderby'    => 'count', // Сортируем по количеству товаров
+    'order'      => 'ASC',   // В порядке убывания
+
 );
 
-$popular_categories = get_terms($args);
+$terms = get_terms($args);
 
-if ($popular_categories) {
-    echo '<h2>Популярные категории</h2>';
-
+if ($terms) {
     echo '<div class="product-categories">';
-    
-    foreach ($popular_categories as $category) {
-        $term_link = get_term_link($category);
-        echo '<div class="category-item" ';
-        echo '<a href="' . esc_url($term_link) . '">' . esc_html($category->name) . '</a>';
+    foreach ($terms as $term) {
+        $term_link = get_term_link($term);
+        echo '<div class="category-item">';
+        echo '<a href="' . esc_url($term_link) . '">' . esc_html($term->name) . '</a>';
         echo '</div>';
     }
-    
-    echo '</div>'; // Закрываем div для списка категорий
-
+    echo '</div>';
 } else {
+    echo 'Категории не найдены.';
 }
 ?>
 

@@ -11042,6 +11042,20 @@ h1, h2, h3{
 	padding: 5px 15px;
 	border-radius: 10px;
 	color: #fff;
+  width: fit-content
+}
+
+@media (hover:hover) {
+  
+.back-btn:hover{
+	background: #353535;
+	color: #fff;
+}
+}
+
+.back-btn:active{
+	background: #353535;
+	color: #fff;
 }
 
   .content-area {
@@ -11073,7 +11087,7 @@ h1, h2, h3{
 	justify-content: center;
 	gap: 20px;
   }
-  .product{
+  .sub-cat .product{
 	width: 280px;
 	height: 100%;
 	background: #f1f1f1;
@@ -11081,6 +11095,12 @@ h1, h2, h3{
 	img{
 		display: none;
 	}
+  }
+
+  .product{
+    img{
+      display: none;
+    }
   }
 
   .subcategory-filter{
@@ -11143,7 +11163,7 @@ h1, h2, h3{
     .product-categories {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
         font-size: 22px;
     }
 
@@ -11151,3 +11171,32 @@ h1, h2, h3{
     .woocommerce-result-count{
       display: none;
     }
+
+
+
+
+.category-item{
+  padding: 10px 15px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+
+.footer{
+  margin-top: 200px;
+  width: 100vw;
+  background-color: #e0e0e0;
+  align-self: center;
+}
+
+.woostify-container{
+  display: flex;
+  flex-direction: column;
+}
+.site-header-inner .woostify-container{
+  flex-direction: row;
+}
+
+.site-content{
+margin: 0;
+}
